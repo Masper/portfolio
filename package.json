@@ -1,0 +1,14 @@
+{
+  "name": "portfolio_rang",
+  "version": "1.0.0",
+  "description": "Online programmer portfolio",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "Casper Rang",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "4.11.0"
+  }
+}
