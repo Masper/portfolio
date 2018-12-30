@@ -1,0 +1,46 @@
+.resume-page-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 100vh auto;
+  grid-template-rows: 20vh 20vh 40vh;
+  grid-column-gap: 20px;
+  grid-template-areas:
+    "head head "
+    "intro intro "
+    "e d  ";
+}
+
+.resume-introduction {
+  grid-column: 0;
+  grid-area: intro;
+}
+
+.resume-header {
+  grid-column: 0;
+  grid-area: head;
+}
+
+.resume-skills {
+  grid-area: d;
+
+  .skill {
+    display: block;
+
+    .resume-skills-grade {
+      padding-left: 150px;
+      float: center;
+    }
+  }
+}
+
+.resume-work-history {
+  grid-area: e;
+}
+
+.resume-work-history,
+.resume-studies-list {
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
