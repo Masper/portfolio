@@ -9,7 +9,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #000;
+    background: #fff;
     transition: all 0.5s ease-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
@@ -42,7 +42,7 @@
   .menu-branding {
     margin: 0;
     padding: 0;
-    background: #d0d2db;
+    background: #1b2362;
     list-style: none;
     transform: translate3d(0, 100%, 0);
     transition: all 0.5s ease-out; }
@@ -51,14 +51,14 @@
     .menu-branding .portrait {
       width: 250px;
       height: 250px;
-      background: url(../img/photo.png);
+      background: url(../img/cat.jpg);
       background-size: cover;
       border-radius: 50%;
-      border: solid 3px #be0e0e; }
+      border: solid 3px #ee5b5b; }
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: #cbccd7;
+    background: #19205a;
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 0.5s ease-out; }
@@ -70,7 +70,7 @@
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current > a {
-      color: #be0e0e; }
+      color: #ee5b5b; }
 
 .nav-link {
   display: inline-block;
@@ -79,11 +79,11 @@
   text-transform: uppercase;
   padding: 1rem 0;
   font-weight: 300;
-  color: #000;
+  color: #fff;
   text-decoration: none;
   transition: all 0.5s ease-out; }
   .nav-link:hover {
-    color: #be0e0e; }
+    color: #ee5b5b; }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.1s; }
@@ -130,29 +130,43 @@
 .resume-page-container {
   display: grid;
   width: 100%;
-  grid-template-columns: 100vh auto;
-  grid-template-rows: 20vh 20vh 40vh;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
   grid-column-gap: 20px;
-  grid-template-areas: "head head " "intro intro " "e d  "; }
+  grid-template-areas: "head head" "intro intro" "studies studies" "work skills"; }
+
+@media screen and (max-width: 768px) {
+  .resume-page-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "head" "intro" "studies" "skills" "work"; } }
 
 .resume-introduction {
-  grid-column: 0;
   grid-area: intro; }
 
 .resume-header {
-  grid-column: 0;
   grid-area: head; }
 
-.resume-skills {
-  grid-area: d; }
-  .resume-skills .skill {
+.resume-studies {
+  grid-area: studies; }
+
+.resume-skills,
+.resume-studies,
+.resume-work {
+  background-color: #232e82;
+  margin: 5px; }
+
+.resume-skils {
+  grid-area: skills; }
+  .resume-skils .skill {
     display: block; }
-    .resume-skills .skill .resume-skills-grade {
+    .resume-skils .skill .resume-skills-grade {
       padding-left: 150px;
       float: center; }
 
 .resume-work-history {
-  grid-area: e; }
+  grid-area: work; }
+  .resume-work-history .work-title {
+    color: #ee5b5b; }
 
 .resume-work-history,
 .resume-studies-list {
@@ -165,8 +179,8 @@
   box-sizing: border-box; }
 
 body {
-  background: #d9dae2;
-  color: #000;
+  background: #1e276e;
+  color: #fff;
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -183,7 +197,7 @@ body {
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: rgba(217, 218, 226, 0.5); }
+      background: rgba(30, 39, 110, 0.5); }
 
 footer {
   position: fixed;
@@ -192,7 +206,7 @@ footer {
   display: box;
   align-self: center;
   text-align: center;
-  background: rgba(223, 224, 230, 0.5); }
+  background: rgba(32, 42, 118, 0.5); }
 
 h1,
 h2,
@@ -208,10 +222,10 @@ h3 {
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(223, 224, 230, 0.5); }
+    background: rgba(32, 42, 118, 0.5); }
 
 a {
-  color: #000;
+  color: #fff;
   text-decoration: none; }
 
 header {
@@ -220,7 +234,7 @@ header {
   z-index: 2; }
 
 .text-secondary {
-  color: #be0e0e; }
+  color: #ee5b5b; }
 
 main {
   padding: 3rem;
@@ -230,7 +244,7 @@ main {
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
-        color: #be0e0e;
+        color: #ee5b5b;
         transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }

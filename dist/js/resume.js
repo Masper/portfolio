@@ -5,7 +5,7 @@ const resumeSkills = document.querySelectorAll(".resume-skills-grade");
 let toggleSkillsStyling = false;
 
 // Function to apply styling
-function showStyling() {
+/*function showStyling() {
   if (!toggleSkillsStyling) {
     for (skill of resumeSkills) {
       let number = skill.innerHTML;
@@ -19,4 +19,4 @@ function showStyling() {
   }
 }
 
-showStyling();
+showStyling();*/

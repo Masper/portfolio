@@ -1,27 +1,49 @@
 .resume-page-container {
   display: grid;
   width: 100%;
-  grid-template-columns: 100vh auto;
-  grid-template-rows: 20vh 20vh 40vh;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
   grid-column-gap: 20px;
   grid-template-areas:
-    "head head "
-    "intro intro "
-    "e d  ";
+    "head head"
+    "intro intro"
+    "studies studies"
+    "work skills";
+}
+
+@include mediaMd {
+  .resume-page-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "head"
+      "intro"
+      "studies"
+      "skills"
+      "work";
+  }
 }
 
 .resume-introduction {
-  grid-column: 0;
   grid-area: intro;
 }
 
 .resume-header {
-  grid-column: 0;
   grid-area: head;
 }
 
-.resume-skills {
-  grid-area: d;
+.resume-studies {
+  grid-area: studies;
+}
+
+.resume-skills,
+.resume-studies,
+.resume-work {
+  background-color: rgba(lighten($primary-color, 5), 2);
+  margin: 5px;
+}
+
+.resume-skils {
+  grid-area: skills;
 
   .skill {
     display: block;
@@ -34,7 +56,11 @@
 }
 
 .resume-work-history {
-  grid-area: e;
+  grid-area: work;
+
+  .work-title {
+    color: $secondary-color;
+  }
 }
 
 .resume-work-history,
