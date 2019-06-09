@@ -25,7 +25,8 @@
 .menu {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 90%;
+  left: 5vw;
   opacity: 0.9;
   visibility: hidden; }
   .menu.show {
@@ -231,7 +232,7 @@ h3 {
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(255, 255, 255, 0.5); }
+    background: rgba(255, 255, 255, 0.3); }
 
 a {
   color: #1a1919;
