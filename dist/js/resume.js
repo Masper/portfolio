@@ -1,14 +1,18 @@
 // Select DOM items
-const resumeSkills = document.querySelectorAll(".resume-skills-grade");
+const resumeSkills = document.querySelectorAll(".skills > li");
 
 // Boolean of no-styling standard set to false
-let toggleSkillsStyling = false;
+let showSkillsStyling = false;
 
-// Function to apply styling
-/*function showStyling() {
-  if (!toggleSkillsStyling) {
+function toggleShowSkills() {
+  showSkillsStyling = !showSkillsStyling;
+}
+
+function showStyling() {
+  if (!showSkillsStyling) {
     for (skill of resumeSkills) {
-      let number = skill.innerHTML;
+      let number = skill.className;
+      console.log(number);
       skill.innerHTML += ": ";
 
       for (i = 0; i < number; i++) {
@@ -19,4 +23,4 @@ let toggleSkillsStyling = false;
   }
 }
 
-showStyling();*/
+showStyling();

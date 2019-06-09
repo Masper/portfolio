@@ -1,14 +1,21 @@
 .resume-page-container {
   display: grid;
-  width: 100%;
+  width: 90%;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto auto;
-  grid-column-gap: 20px;
+  column-gap: 10px;
+  row-gap: 10px;
   grid-template-areas:
     "head head"
     "intro intro"
     "studies studies"
     "work skills";
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 @include mediaMd {
@@ -29,6 +36,7 @@
 
 .resume-header {
   grid-area: head;
+  margin: 0;
 }
 
 .resume-studies {
@@ -38,15 +46,20 @@
 .resume-skills,
 .resume-studies,
 .resume-work {
-  background-color: rgba(lighten($primary-color, 5), 2);
-  margin: 5px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgba(lighten($secondary-color, 35), 3);
+  background-color: rgba(lighten($secondary-color, 85), 3);
 }
 
 .resume-skils {
   grid-area: skills;
 
-  .skill {
-    display: block;
+  .skills {
+    li {
+      display: block;
+      list-style: none;
+    }
 
     .resume-skills-grade {
       padding-left: 150px;
@@ -59,14 +72,6 @@
   grid-area: work;
 
   .work-title {
-    color: $secondary-color;
+    color: $third-color;
   }
-}
-
-.resume-work-history,
-.resume-studies-list {
-  text-decoration: none;
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
