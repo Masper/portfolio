@@ -138,7 +138,10 @@
   .resume-page-container ul {
     list-style-type: none;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    display: block; }
+    .resume-page-container ul div {
+      display: inline-block; }
 
 @media screen and (max-width: 768px) {
   .resume-page-container {
@@ -163,14 +166,17 @@
   border-color: #cbebfe;
   background-color: white; }
 
-.resume-skils {
+.resume-skills {
   grid-area: skills; }
-  .resume-skils .skills li {
-    display: block;
-    list-style: none; }
-  .resume-skils .skills .resume-skills-grade {
-    padding-left: 150px;
-    float: center; }
+  .resume-skills .skills li {
+    height: 40px;
+    margin: 0;
+    padding: 0; }
+    .resume-skills .skills li .score {
+      margin-right: 10px;
+      float: right;
+      width: 300px;
+      height: 30px; }
 
 .resume-work-history {
   grid-area: work; }
@@ -225,7 +231,7 @@ h3 {
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(226, 226, 226, 0.87); }
+    background: rgba(255, 255, 255, 0.5); }
 
 a {
   color: #1a1919;

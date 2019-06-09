@@ -15,6 +15,11 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: block;
+
+    div {
+      display: inline-block;
+    }
   }
 }
 
@@ -52,18 +57,21 @@
   background-color: rgba(lighten($secondary-color, 85), 3);
 }
 
-.resume-skils {
+.resume-skills {
   grid-area: skills;
 
   .skills {
     li {
-      display: block;
-      list-style: none;
-    }
+      height: 40px;
+      margin: 0;
+      padding: 0;
 
-    .resume-skills-grade {
-      padding-left: 150px;
-      float: center;
+      .score {
+        margin-right: 10px;
+        float: right;
+        width: 300px;
+        height: 30px;
+      }
     }
   }
 }
