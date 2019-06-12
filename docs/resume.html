@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
 
-    <title>Welcome To My Resume!</title>
+    <title>Welcome To About Me!</title>
   </head>
 
   <body>
@@ -43,103 +43,77 @@
     </header>
 
     <main>
-      <class class="resume-page-container">
+      <div class="resume-page-container">
         <h1 class="resume-header">
-          Welcome to <span class="text-secondary">my resume! </span>
+          Welcome to <span class="text-secondary">about me! </span>
         </h1>
-
         <div class="resume-introduction">
           I have a multidisclipinary background. After a year studying Biology,
           I decided to pursue History and International Relations. After my
           studies I worked in international business, taking on various roles
           within small companies. During and after this I discovered a love for
           programming. I started of doing front-end (js/Angular), then continued
-          with NodeJS, Java(spring), database. To become better at Java I build
-          various Android apps. I was selected for a Java traineeship in which I
-          gained an OCA-certification, currently I work as a Java software
-          engineer for Keylane.
+          with NodeJS, Java(spring) and database integration(MySQL/JDBC). To
+          become better at Java I build various Android apps. I was selected for
+          a Java traineeship in which I gained an OCA-certification, currently I
+          work as a Java software engineer for Keylane.
         </div>
 
         <div class="resume-studies">
-          <h2>Studies</h2>
-          <ul class="resume-studies-list">
-            <li>
-              Utrecht University: International Relations MA
-            </li>
-            <li>
-              Utrecht University: History BA
-            </li>
-          </ul>
+          <div class="item">
+            <h2>Studies</h2>
+            <ul class="resume-studies-list">
+              <li>
+                <div class="list-super">Utrecht University</div>
+                <div class="list-sub">International Relations MA</div>
+              </li>
+              <li>
+                <div class="list-super">Utrecht University</div>
+                <div class="list-sub">History BA</div>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div class="resume-work">
-          <h2>Work history</h2>
-          <ul class="resume-work-history">
-            <li class="work-list">
-              <div class="work-company">Keylane</div>
-              <div class="work-title">Java Software Engineer</div>
-            </li>
-            <li class="work-list">
-              <div class="work-company">Medical-X</div>
-              <div class="work-title">International Business Manager</div>
-            </li>
-            <li class="work-list">
-              <div class="work-company">MeduProf-S</div>
-              <div class="work-title">Regional Manager Asia/Pacific</div>
-            </li>
-          </ul>
+          <div class="item">
+            <h2>Work history</h2>
+            <ul class="resume-work-history">
+              <li class="work-list">
+                <div class="list-super">Keylane</div>
+                <div class="list-sub">Java Software Engineer</div>
+              </li>
+              <li class="work-list">
+                <div class="list-super">Medical-X</div>
+                <div class="list-sub">International Business Developer</div>
+              </li>
+              <li class="work-list">
+                <div class="list-super">MeduProf-S</div>
+                <div class="list-sub">Regional Manager Asia/Pacific</div>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div class="resume-skills">
-          <h2>Software development</h2>
-          <ul class="skills">
-            <li>
-              Java
-              <canvas class="score">5</canvas>
-            </li>
-            <li>
-              HTML
-              <canvas class="score">4</canvas>
-            </li>
-            <li>
-              CSS/Sass/Less
-              <canvas class="score">4</canvas>
-            </li>
-            <li>
-              Javascript
-              <canvas class="score">4</canvas>
-            </li>
-            <li>
-              Angular
-              <canvas class="score">4</canvas>
-            </li>
-            <li>
-              SQL/DB2
-              <canvas class="score">4</canvas>
-            </li>
-            <li>
-              Spring
-              <canvas class="score">4</canvas>
-            </li>
-            <li>
-              NodeJS
-              <canvas class="score">3</canvas>
-            </li>
-            <li>
-              Python
-              <canvas class="score">2</canvas>
-            </li>
-            <li>
-              Git
-              <canvas class="score">3</canvas>
-            </li>
-            <li>
-              Maven
-              <canvas class="score">4</canvas>
-            </li>
-          </ul>
+          <div class="item">
+            <h2>Software development</h2>
+            <div class="graph-cont">
+              <div class="bar bar5">Java</div>
+              <div class="bar bar4">HTML</div>
+              <div class="bar bar4">CSS/Sass/Less</div>
+              <div class="bar bar4">Javascript</div>
+              <div class="bar bar4">Angular</div>
+              <div class="bar bar4">SQL/DB2</div>
+              <div class="bar bar4">Spring</div>
+              <div class="bar bar3">NodeJS</div>
+              <div class="bar bar2">Python</div>
+              <div class="bar bar3">Git</div>
+              <div class="bar bar4">Maven</div>
+            </div>
+          </div>
         </div>
-      </class>
+      </div>
     </main>
 
     <footer id="footer">Copyright Casper Rang ©2019</footer>

@@ -25,7 +25,8 @@
 .menu {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 90%;
+  left: 5vw;
   opacity: 0.9;
   visibility: hidden; }
   .menu.show {
@@ -42,7 +43,7 @@
   .menu-branding {
     margin: 0;
     padding: 0;
-    background: #d8d8d8;
+    background: #fafafa;
     list-style: none;
     transform: translate3d(0, 100%, 0);
     transition: all 0.35s ease-out; }
@@ -51,14 +52,14 @@
     .menu-branding .portrait {
       width: 450px;
       height: 450px;
-      background: url(../img/cat.jpg);
+      background: url(../img/Cat.jpg);
       background-size: cover;
       border-radius: 50%;
-      border: solid 5px #1ba9fc; }
+      border: solid 5px #213799; }
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: #d0d0d0;
+    background: #f2f2f2;
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 0.35s ease-out; }
@@ -70,7 +71,7 @@
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current > a {
-      color: #1ba9fc; }
+      color: #213799; }
 
 .nav-link {
   display: inline-block;
@@ -83,7 +84,7 @@
   text-decoration: none;
   transition: all 0.35s ease-out; }
   .nav-link:hover {
-    color: #1ba9fc; }
+    color: #213799; }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.1s; }
@@ -129,22 +130,29 @@
 
 .resume-page-container {
   display: grid;
-  width: 90%;
+  width: 80%;
+  padding-left: 100px;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto auto;
-  column-gap: 10px;
-  row-gap: 10px;
-  grid-template-areas: "head head" "intro intro" "studies studies" "work skills"; }
+  column-gap: 30px;
+  row-gap: 30px;
+  grid-template-areas: "head head" "intro intro" "work skills" "studies skills"; }
+  .resume-page-container .text-secondary {
+    color: #213799; }
+  .resume-page-container .resume-header {
+    background: rgba(255, 255, 255, 0.8);
+    margin-left: 40px;
+    padding: 5px; }
   .resume-page-container ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
     display: block; }
-    .resume-page-container ul div {
-      display: inline-block; }
 
 @media screen and (max-width: 768px) {
   .resume-page-container {
+    padding: 0;
+    width: 100%;
     grid-template-columns: 1fr;
     grid-template-areas: "head" "intro" "studies" "skills" "work"; } }
 
@@ -152,42 +160,114 @@
   grid-area: intro; }
 
 .resume-header {
-  grid-area: head;
-  margin: 0; }
+  grid-area: head; }
 
 .resume-studies {
   grid-area: studies; }
 
-.resume-skills,
-.resume-studies,
-.resume-work {
-  border-style: solid;
-  border-width: 3px;
-  border-color: #cbebfe;
-  background-color: white; }
+.resume-skills .item,
+.resume-studies .item,
+.resume-work .item {
+  align-self: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.9); }
+  .resume-skills .item .list-super,
+  .resume-studies .item .list-super,
+  .resume-work .item .list-super {
+    font-weight: bold;
+    color: #ee1616;
+    display: block; }
+  .resume-skills .item .list-sub,
+  .resume-studies .item .list-sub,
+  .resume-work .item .list-sub {
+    font-style: italic; }
+  .resume-skills .item h2,
+  .resume-studies .item h2,
+  .resume-work .item h2 {
+    margin: 5px 5px; }
+  .resume-skills .item div,
+  .resume-studies .item div,
+  .resume-work .item div {
+    margin: 10px 10px; }
 
 .resume-skills {
   grid-area: skills; }
-  .resume-skills .skills li {
-    height: 40px;
-    margin: 0;
-    padding: 0; }
-    .resume-skills .skills li .score {
-      margin-right: 10px;
-      float: right;
-      width: 300px;
-      height: 30px; }
 
 .resume-work-history {
   grid-area: work; }
-  .resume-work-history .work-title {
-    color: #ee1616; }
+
+.bar {
+  height: 30px;
+  max-width: 500px;
+  line-height: 30px;
+  font-size: 16px;
+  color: white;
+  padding: 0 0 0 10px;
+  position: relative;
+  z-index: 0; }
+
+.graph-cont {
+  width: calc(100% - 20px);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto; }
+
+.bar::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 30px;
+  top: 0;
+  z-index: -1;
+  background: whitesmoke; }
+
+.bar::after {
+  content: "";
+  background: #ee1616;
+  height: 30px;
+  transition: 0.7s;
+  display: block;
+  width: 100%;
+  animation: bar-before 1 2.8s;
+  -webkit-animation: bar-before 1 2.8s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; }
+
+.bar1::after {
+  max-width: 15%; }
+
+.bar2::after {
+  max-width: 34%; }
+
+.bar3::after {
+  max-width: 54%; }
+
+.bar4::after {
+  max-width: 82%; }
+
+.bar5::after {
+  max-width: 86%; }
+
+@-webkit-keyframes bar-before {
+  0% {
+    width: 0px; }
+  100% {
+    width: 100%; } }
+
+@keyframes bar-before {
+  0% {
+    width: 0px; }
+  100% {
+    width: 100%; } }
 
 * {
   box-sizing: border-box; }
 
 body {
-  background: #dddddd;
+  background: white;
   color: #1a1919;
   height: 100%;
   margin: 0;
@@ -205,7 +285,7 @@ body {
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: rgba(221, 221, 221, 0.6); }
+      background: rgba(255, 255, 255, 0.6); }
 
 footer {
   position: fixed;
@@ -215,7 +295,7 @@ footer {
   opacity: 0.5;
   text-align: right;
   padding-right: 10px;
-  background: rgba(226, 226, 226, 0.5); }
+  background: rgba(255, 255, 255, 0.5); }
 
 h1,
 h2,
@@ -231,7 +311,7 @@ h3 {
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(255, 255, 255, 0.5); }
+    background: rgba(255, 255, 255, 0.3); }
 
 a {
   color: #1a1919;
@@ -243,7 +323,7 @@ header {
   z-index: 2; }
 
 .text-secondary {
-  color: #1ba9fc; }
+  color: #213799; }
 
 main {
   padding: 3rem;
@@ -253,7 +333,7 @@ main {
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
-        color: #1ba9fc;
+        color: #213799;
         transition: all 0.35s ease-out; }
   main#home {
     overflow: hidden; }
