@@ -1,30 +1,38 @@
 .resume-page-container {
   display: grid;
-  width: 90%;
+  width: 80%;
+  padding-left: 100px;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto auto;
-  column-gap: 10px;
-  row-gap: 10px;
+  column-gap: 30px;
+  row-gap: 30px;
   grid-template-areas:
     "head head"
     "intro intro"
-    "studies studies"
-    "work skills";
+    "work skills"
+    "studies skills";
 
+  .text-secondary {
+    color: $secondary-color;
+  }
+
+  .resume-header {
+    background: rgba(lighten($primary-color, 45), 0.8);
+    margin-left: 40px;
+    padding: 5px;
+  }
   ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
     display: block;
-
-    div {
-      display: inline-block;
-    }
   }
 }
 
 @include mediaMd {
   .resume-page-container {
+    padding: 0;
+    width: 100%;
     grid-template-columns: 1fr;
     grid-template-areas:
       "head"
@@ -41,7 +49,6 @@
 
 .resume-header {
   grid-area: head;
-  margin: 0;
 }
 
 .resume-studies {
@@ -51,35 +58,111 @@
 .resume-skills,
 .resume-studies,
 .resume-work {
-  border-style: solid;
-  border-width: 3px;
-  border-color: rgba(lighten($secondary-color, 35), 3);
-  background-color: rgba(lighten($secondary-color, 85), 3);
-}
+  .item {
+    align-self: center;
+    padding: 10px;
+    background: rgba(lighten($primary-color, 35), 0.9);
 
-.resume-skills {
-  grid-area: skills;
+    .list-super {
+      font-weight: bold;
+      color: $third-color;
+      display: block;
+    }
 
-  .skills {
-    li {
-      height: 40px;
-      margin: 0;
-      padding: 0;
+    .list-sub {
+      font-style: italic;
+    }
 
-      .score {
-        margin-right: 10px;
-        float: right;
-        width: 300px;
-        height: 30px;
-      }
+    h2 {
+      margin: 5px 5px;
+    }
+    div {
+      margin: 10px 10px;
     }
   }
 }
 
+.resume-skills {
+  grid-area: skills;
+}
+
 .resume-work-history {
   grid-area: work;
+}
 
-  .work-title {
-    color: $third-color;
+.bar {
+  height: 30px;
+  max-width: 500px;
+  line-height: 30px;
+  font-size: 16px;
+  color: white;
+  padding: 0 0 0 10px;
+  position: relative;
+  z-index: 0;
+}
+
+.graph-cont {
+  width: calc(100% - 20px);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.bar::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 30px;
+  top: 0;
+  z-index: -1;
+  background: whitesmoke;
+}
+.bar::after {
+  content: "";
+  background: $third-color;
+  height: 30px;
+  transition: 0.7s;
+  display: block;
+  width: 100%;
+  animation: bar-before 1 2.8s;
+  -webkit-animation: bar-before 1 2.8s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.bar1::after {
+  max-width: 15%;
+}
+.bar2::after {
+  max-width: 34%;
+}
+.bar3::after {
+  max-width: 54%;
+}
+.bar4::after {
+  max-width: 82%;
+}
+.bar5::after {
+  max-width: 86%;
+}
+
+@-webkit-keyframes bar-before {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes bar-before {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 100%;
   }
 }
